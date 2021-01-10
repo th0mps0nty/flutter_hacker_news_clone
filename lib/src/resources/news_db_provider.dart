@@ -3,9 +3,15 @@ import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
 import 'dart:io';
 import '../models/item_model.dart';
+import 'package:news/src/resources/repository.dart';
 
-class NewsDbProvider {
+class NewsDbProvider implements Source, Cache {
   Database db;
+
+  NewsDbProvider() {
+    init();
+  }
+
   void init() async {
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
     final path = join(documentsDirectory.path, "items.db");
@@ -32,6 +38,12 @@ class NewsDbProvider {
     });
   }
 
+// ignore: todo
+// TODO - fetch and store top ids
+  Future<List<int>> fetchTopIds() {
+    return null;
+  }
+
   Future<ItemModel> fetchItem(int id) async {
     final maps = await db.query(
       "Items",
@@ -50,3 +62,5 @@ class NewsDbProvider {
     return db.insert("Items", item.toMapForDb());
   }
 }
+
+final newsDbProvider = NewsDbProvider();
