@@ -11,6 +11,7 @@ class StoriesProvider extends InheritedWidget {
   bool updateShouldNotify(_) => true;
 
   static StoriesBloc of(BuildContext context) {
+    // ignore: deprecated_member_use
     return (context.inheritFromWidgetOfExactType(StoriesProvider)
             as StoriesProvider)
         .bloc;
