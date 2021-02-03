@@ -3,7 +3,7 @@ import 'package:http/http.dart' show Client;
 import 'package:news/src/resources/repository.dart';
 import '../models/item_model.dart';
 
-final _root = 'https://hacker-news.firebaseio.com/';
+final _root = 'https://hacker-news.firebaseio.com/v0';
 
 class NewsApiProvider implements Source {
   Client client = Client();
