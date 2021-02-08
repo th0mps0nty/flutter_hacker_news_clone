@@ -5,8 +5,8 @@ class ItemModel {
   final bool deleted;
   final String type;
   final String by;
-  final double time;
-  final double text;
+  final int time;
+  final String text;
   final bool dead;
   final int parent;
   final List<dynamic> kids;
@@ -21,7 +21,6 @@ class ItemModel {
         type = parsedJson['type'],
         by = parsedJson['by'],
         time = parsedJson['time'],
-        // TYPE INT is not TypeOf Double
         text = parsedJson['text'] ?? '',
         dead = parsedJson['dead'] ?? false,
         parent = parsedJson['parent'],
