@@ -23,10 +23,33 @@ class NewsListTile extends StatelessWidget {
             if (!itemSnapshot.hasData) {
               return Text('Still loading item $itemId');
             }
-            return Text(itemSnapshot.data.title);
+            return buildTile(itemSnapshot.data);
           },
         );
       },
+    );
+  }
+
+  Widget buildTile(ItemModel item) {
+    return Column(
+      children: [
+        Card(
+          elevation: 3.0,
+          child: ListTile(
+            title: Text(item.title),
+            subtitle: Text('${item.score} points'),
+            trailing: Column(
+              children: [
+                Icon(Icons.comment),
+                Text('${item.descendants}'),
+              ],
+            ),
+          ),
+        ),
+        Divider(
+          height: 2.0,
+        )
+      ],
     );
   }
 }
