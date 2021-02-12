@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/src/bloc/stories_provider.dart';
+import 'package:news/src/widgets/refresh.dart';
 import '../widgets/news_list_tile.dart';
 
 class NewsList extends StatelessWidget {
@@ -27,15 +28,17 @@ class NewsList extends StatelessWidget {
             child: CircularProgressIndicator(),
           );
         }
-        return ListView.builder(
-          itemCount: snapshot.data.length,
-          itemBuilder: (BuildContext context, int index) {
-            bloc.fetchItem(snapshot.data[index]);
-            // return Text('${snapshot.data[index]}');
-            return NewsListTile(
-              itemId: snapshot.data[index],
-            );
-          },
+        return Refresh(
+          child: ListView.builder(
+            itemCount: snapshot.data.length,
+            itemBuilder: (BuildContext context, int index) {
+              bloc.fetchItem(snapshot.data[index]);
+              // return Text('${snapshot.data[index]}');
+              return NewsListTile(
+                itemId: snapshot.data[index],
+              );
+            },
+          ),
         );
       },
     );
