@@ -23,7 +23,9 @@ class App extends StatelessWidget {
           )
         : MaterialPageRoute(
             builder: (context) {
-              return NewsDetail();
+              final itemId = int.parse(settings.name.replaceFirst('/', ''));
+
+              return NewsDetail(itemId: itemId);
             },
           );
   }
