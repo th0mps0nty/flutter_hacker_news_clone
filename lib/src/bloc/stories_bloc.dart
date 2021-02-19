@@ -1,7 +1,7 @@
 import 'package:rxdart/rxdart.dart';
 // import 'package:rxdart/subjects.dart';
-import '../models/item_model.dart';
-import '../resources/repository.dart';
+import 'package:news/src/models/item_model.dart';
+import 'package:news/src/resources/repository.dart';
 
 class StoriesBloc {
   final _repository = Repository();

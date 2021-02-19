@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news/src/bloc/stories_provider.dart';
 import 'package:news/src/widgets/refresh.dart';
-import '../widgets/news_list_tile.dart';
+import 'package:news/src/widgets/news_list_tile.dart';
 
 class NewsList extends StatelessWidget {
   @override

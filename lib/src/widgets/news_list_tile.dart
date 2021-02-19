@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news/src/widgets/loading_container.dart';
-import '../models/item_model.dart';
-import '../bloc/stories_provider.dart';
+import 'package:news/src/models/item_model.dart';
+import 'package:news/src/bloc/stories_provider.dart';
 
 class NewsListTile extends StatelessWidget {
   final int itemId;
