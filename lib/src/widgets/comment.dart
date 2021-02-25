@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:news/src/models/item_model.dart';
-import 'package:news/src/widgets/loading_container.dart';
 
 class Comment extends StatelessWidget {
   final int itemId;
