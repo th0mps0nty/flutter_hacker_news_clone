@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/src/models/item_model.dart';
+import 'package:news/src/widgets/loading_container.dart';
 
 class Comment extends StatelessWidget {
   final int itemId;
@@ -13,9 +14,7 @@ class Comment extends StatelessWidget {
       future: itemMap[itemId],
       builder: (BuildContext context, AsyncSnapshot<ItemModel> snapshot) {
         if (!snapshot.hasData) {
-          return Center(
-            child: CircularProgressIndicator(),
-          );
+          return LoadingContainer();
         }
 
         final item = snapshot.data;

@@ -14,8 +14,7 @@ class CommentsProvider extends InheritedWidget {
   static CommentsBloc of(BuildContext context) {
     // return context.dependOnInheritedWidgetOfExactType<CommentsProvider>();
     // ignore: deprecated_member_use
-    return (context.inheritFromWidgetOfExactType(CommentsProvider)
-            as CommentsProvider)
+    return (context.dependOnInheritedWidgetOfExactType<CommentsProvider>())
         .bloc;
   }
 }

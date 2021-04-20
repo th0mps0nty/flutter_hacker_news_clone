@@ -13,8 +13,6 @@ class StoriesProvider extends InheritedWidget {
 
   static StoriesBloc of(BuildContext context) {
     // ignore: deprecated_member_use
-    return (context.inheritFromWidgetOfExactType(StoriesProvider)
-            as StoriesProvider)
-        .bloc;
+    return (context.dependOnInheritedWidgetOfExactType<StoriesProvider>()).bloc;
   }
 }
